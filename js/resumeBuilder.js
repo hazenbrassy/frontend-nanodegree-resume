@@ -11,7 +11,7 @@ var bio = {
 	"role": "Developer",
 	"picURL": "images/me.jpg",
 	"welcomeMsg": "It's true. I can do it all.",
-	"skills": ["javascript","HTML","CSS","General quips"],
+	"skills": ["HTML","CSS","Straight-up, vanilla javascript","jQuery and other fancy js","SQL and Relational Databases", "Basic+ Understanding of Select Modern Frameworks - Ruby on Rails, Node","R (statistical programming language)"],
 	"contacts": {
 		"email": "hazenbrassy@gmail.com",
 		"twitter": "@hazenbrassy",
@@ -42,13 +42,13 @@ var education = {
 		{
 			"title": "Front-End Web Developer Nanodegree",
 			"school": "Udacity",
-			"dates": "2015",
+			"dates": "2015 ",
 			"url": "www.udacity.com"
 		},
 		{
 			"title": "Data Scientist Tool Kit",
 			"school": "Coursera",
-			"dates": "2014",
+			"dates": "2014 ",
 			"url": "www.coursera.com"
 		}
 	]
@@ -183,7 +183,7 @@ if (bio.skills.length > 0) {
 //	console.log(HTMLskillsStart);
 
 	for (var i=0; i < bio.skills.length; i++) {
-		$("#header").append(HTMLskills.replace("%data%",bio.skills[i]));
+		$("#skills").append(HTMLskills.replace("%data%",bio.skills[i]));
 //		console.log(HTMLskills);
 	}
 }

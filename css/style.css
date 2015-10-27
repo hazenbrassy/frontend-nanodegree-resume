@@ -40,7 +40,8 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #999;
+  color: #f5ae23;
+/*  color: #999; */
   line-height: 29px;
   padding: 10px;
 }
@@ -101,7 +102,7 @@ a {
 .welcome-message {
   font-style: italic;
   font-size: 18px;
-  color: #f3f3f3;
+  color: gray;
   line-height: 28px;
 }
 
@@ -109,6 +110,7 @@ a {
   color: #f5ae23;
   display: none;
 }
+
 
 .orange {
   background-color: #f5ae23;
@@ -120,7 +122,7 @@ a {
 
 .white-text {
   font-weight: bold;
-  color: #fff;
+  color: gray;
 }
 
 .gray {
@@ -133,9 +135,16 @@ a {
   background-color: #4a4a4a;
 }
 
+.workHeader {
+  color: #f5ae23;
+}
+
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+    /*background-color: #484848;*/
+  background-color: #C0DDE3;
+
+
 }
 
 .flex-box {
@@ -172,6 +181,7 @@ span {
 
 #lets-connect {
   text-align: center;
+  background-color: #C0DDE3;
 }
 
 /* Media queries to handle various device widths */
