@@ -100,6 +100,36 @@ var work = {
 // ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
+//BIO DISPLAY FUNCTION
+//Name and Role
+bio.display= function () {
+	$("#header").prepend(HTMLheaderRole.replace("%data%",bio.role));
+	$("#header").prepend(HTMLheaderName.replace("%data%",bio.fullName));
+
+	//Contacts
+	if (bio.contacts) {
+	//	$("#topContacts").append(HTMLemail.replace("%data%",bio.contacts.email));
+		$("#topContacts").append(HTMLemail.replace("%data%",bio.contacts.email));
+		$("#topContacts").append(HTMLtwitter.replace("%data%",bio.contacts.twitter));
+		$("#topContacts").append(HTMLgithub.replace("%data%",bio.contacts.github));
+	}
+
+	$("#header").append(HTMLbioPic.replace("%data%",bio.picURL));
+	$("#header").append(HTMLwelcomeMsg.replace("%data%",bio.welcomeMsg));
+
+	if (bio.skills.length > 0) {
+		$("#header").append(HTMLskillsStart);
+
+		for (var i=0; i < bio.skills.length; i++) {
+			$("#skills").append(HTMLskills.replace("%data%",bio.skills[i]));
+		}
+	}
+
+	$("#footerContacts").append(HTMLemail.replace("%data%",bio.contacts.email));
+	$("#footerContacts").append(HTMLtwitter.replace("%data%",bio.contacts.twitter));
+	$("#footerContacts").append(HTMLgithub.replace("%data%",bio.contacts.github));
+};
+
 //WORK Display function
 work.display = function() {
     for (var job in work.jobs) {
@@ -152,41 +182,15 @@ education.display = function () {
 
 
 
+
+
 //Appending/Displaying HTML
 // ++++++++++++++++++++++++++++++++++++++++++++++++++
 //
 // ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
-//Name and Role
-$("#header").prepend(HTMLheaderRole.replace("%data%",bio.role));
-$("#header").prepend(HTMLheaderName.replace("%data%",bio.fullName));
-
-//Contacts
-if (bio.contacts) {
-//	$("#topContacts").append(HTMLemail.replace("%data%",bio.contacts.email));
-	$("#topContacts").append(HTMLemail.replace("%data%",bio.contacts.email));
-	$("#topContacts").append(HTMLtwitter.replace("%data%",bio.contacts.twitter));
-	$("#topContacts").append(HTMLgithub.replace("%data%",bio.contacts.github));
-}
-
-
-$("#header").append(HTMLbioPic.replace("%data%",bio.picURL));
-$("#header").append(HTMLwelcomeMsg.replace("%data%",bio.welcomeMsg));
-
-
-
-
-if (bio.skills.length > 0) {
-	$("#header").append(HTMLskillsStart);
-//	console.log(HTMLskillsStart);
-
-	for (var i=0; i < bio.skills.length; i++) {
-		$("#skills").append(HTMLskills.replace("%data%",bio.skills[i]));
-//		console.log(HTMLskills);
-	}
-}
-
+bio.display();
 work.display();
 projects.display();
 education.display();
@@ -198,8 +202,4 @@ $("#mapDiv").append(googleMap);
 
 
 
-//$("#header").append(HTMLskillsStart);
 
-$("#footerContacts").append(HTMLemail.replace("%data%",bio.contacts.email));
-$("#footerContacts").append(HTMLtwitter.replace("%data%",bio.contacts.twitter));
-$("#footerContacts").append(HTMLgithub.replace("%data%",bio.contacts.github));
